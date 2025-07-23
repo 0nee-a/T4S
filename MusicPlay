@@ -140,10 +140,19 @@ CustomTab:AddToggle({
 
 -- Not working?Tab
 
-
-
-
-
+local NotWorkingTab = Window:MakeTab({
+	Name = "Not working?",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = NotworkingTab:AddSection({
+	Name = "Not working?"
+})
+NotworkingTab:AddLabel("If it doesn't work add rbxassetid:// at the beginning of the sentence Example rbxassetid://123")
+local Section = NotworkingTab:AddSection({
+	Name = "Custom"
+})
+NotworkingTab:AddLabel("Add your song to your exploit's workspace folder;0 ")
 
 
 task.wait(3)
