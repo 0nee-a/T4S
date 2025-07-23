@@ -140,7 +140,7 @@ CustomTab:AddToggle({
 
 -- Not working?Tab
 
-local NotWorkingTab = Window:MakeTab({
+local NotworkingTab = Window:MakeTab({
 	Name = "Not working?",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
