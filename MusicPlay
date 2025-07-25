@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "Loading...";
-	Text = "Enjoy!";
+	Title = "Load";
+	Text = "";
 	Icon = ""})
 Duration = 15;
 
@@ -142,7 +142,7 @@ CustomTab:AddToggle({
 
 local NotworkingTab = Window:MakeTab({
 	Name = "Not working?",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://0",
 	PremiumOnly = false
 })
 local Section = NotworkingTab:AddSection({
@@ -152,7 +152,33 @@ NotworkingTab:AddLabel("If it doesn't work add rbxassetid:// at the beginning of
 local Section = NotworkingTab:AddSection({
 	Name = "Custom"
 })
-NotworkingTab:AddLabel("Add your song to your exploit's workspace folder;0 ")
+NotworkingTab:AddLabel("Add your song to your exploit's workspace folder ;0 ")
+-- SettingsTab
+local SettingsTab = Window:MakeTab({
+	Name = "Not working?",
+	Icon = "rbxassetid://0",
+	PremiumOnly = false
+})
+SettingsTab:AddBind({
+	Name = "Bind",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		Bind:Set(Enum.KeyCode.E)
+	end    
+})
+SettingsTab:AddButton({
+	Name = "Destroy",
+	Callback = function()
+OrionLib:Destroy()
+  	end    
+})
+
+
+
+
+
+
 
 
 task.wait(3)
