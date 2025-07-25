@@ -155,7 +155,7 @@ local Section = NotworkingTab:AddSection({
 NotworkingTab:AddLabel("Add your song to your exploit's workspace folder ;0 ")
 -- SettingsTab
 local SettingsTab = Window:MakeTab({
-	Name = "Not working?",
+	Name = "Settings",
 	Icon = "rbxassetid://0",
 	PremiumOnly = false
 })
