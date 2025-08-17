@@ -4,37 +4,45 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Icon = ""})
 Duration = 15;
 
+-- If you want to edit, just edit.
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "F4S - MusicPlay", HidePremium = false, Intro = true, IntroText = "MusicPlay", SaveConfig = true, ConfigFolder = "MusicPlayF4S"})
+local Window = OrionLib:MakeWindow({Name = "F4S - MusicPlay", HidePremium = false, Intro = true, IntroText = "Have Fun!", SaveConfig = true, ConfigFolder = "MPlayF4S"})
 
+-- Music Tab
 
--- Music Tab ;0
 local MusicPlayTab = Window:MakeTab({
-	Name = "MusicPlay",
-	Icon = "rbxassetid://9180622670",
+	Name = "MPlay",
+	Icon = "",
 	PremiumOnly = false
 })
--- And Oh
+
+-- Add sounds
+
 Su = Instance.new("Sound", Workspace)
 Su.Name = "SoundT4S"
 Su.Looped = false
+Su.Volume = 1
 
 Si = Instance.new("Sound", Workspace)
 Si.Name = "SoundT4SC"
 Si.Looped = false
+Si.Volume = 1
 
 local Section = MusicPlayTab:AddSection({
 	Name = "Musicplay"
 })
+
 MusicPlayTab:AddTextbox({
 	Name = "SoundId",
-	Default = "rbxassetid://",
+	Default = "",
 	TextDisappear = false,
 	Callback = function(Value1)
               local mai = game.Workspace.SoundT4S
-              mai.SoundId = (Value1)
+              mai.SoundId = ("rbxassetid://"..Value1)
 	end	  
 })
+
 MusicPlayTab:AddTextbox({
 	Name = "Volume",
 	Default = "1",
@@ -44,6 +52,7 @@ MusicPlayTab:AddTextbox({
               mai2.Volume = (Value2)
 	end	  
 })
+
 MusicPlayTab:AddTextbox({
 	Name = "Pitch",
 	Default = "1",
@@ -60,6 +69,7 @@ MusicPlayTab:AddButton({
       mai1:Play()
   	end    
 })
+
 MusicPlayTab:AddButton({
 	Name = "Stop",
 	Callback = function()
@@ -85,18 +95,21 @@ local CustomTab = Window:MakeTab({
 	Icon = "rbxassetid://9180622670",
 	PremiumOnly = false
 })
+
 local Section = CustomTab:AddSection({
 	Name = "Custom"
 })
+
 CustomTab:AddTextbox({
 	Name = "Name",
-	Default = "Hi.mp3",
+	Default = "1.mp3",
 	TextDisappear = false,
 	Callback = function(Value5)
               local ai = game.Workspace.SoundT4SC
               ai.SoundId = getcustomasset(Value5)
 	end	  
 })
+
 CustomTab:AddTextbox({
 	Name = "Volume",
 	Default = "1",
@@ -106,6 +119,7 @@ CustomTab:AddTextbox({
               ai1.Volume = (Value6)
 	end	  
 })
+
 CustomTab:AddTextbox({
 	Name = "Pitch",
 	Default = "1",
@@ -115,6 +129,7 @@ CustomTab:AddTextbox({
               ai2.PlaybackSpeed = (Value7)
 	end
 })
+
 CustomTab:AddButton({
 	Name = "Play",
 	Callback = function()
@@ -122,6 +137,7 @@ CustomTab:AddButton({
       ai3:Play()
   	end    
 })
+
 CustomTab:AddButton({
 	Name = "Stop",
 	Callback = function()
@@ -129,6 +145,7 @@ CustomTab:AddButton({
       ai4:Stop()
   	end    
 })
+
 CustomTab:AddToggle({
 	Name = "Looped",
 	Default = false,
@@ -141,24 +158,25 @@ CustomTab:AddToggle({
 -- Not working?Tab
 
 local NotworkingTab = Window:MakeTab({
-	Name = "Not working?",
-	Icon = "rbxassetid://0",
+	Name = "NW?",
+	Icon = "",
 	PremiumOnly = false
 })
+
 local Section = NotworkingTab:AddSection({
 	Name = "Not working?"
 })
-NotworkingTab:AddLabel("If it doesn't work add rbxassetid:// at the beginning of the sentence Example rbxassetid://123")
-local Section = NotworkingTab:AddSection({
-	Name = "Custom"
-})
-NotworkingTab:AddLabel("Add your song to your exploit's workspace folder ;0 ")
+
+NotworkingTab:AddLabel("Add your song to your exploit's workspace folder!")
+
 -- SettingsTab
+
 local SettingsTab = Window:MakeTab({
 	Name = "Settings",
-	Icon = "rbxassetid://0",
+	Icon = "",
 	PremiumOnly = false
 })
+
 SettingsTab:AddBind({
 	Name = "Bind",
 	Default = Enum.KeyCode.E,
@@ -167,6 +185,7 @@ SettingsTab:AddBind({
 		Bind:Set(Enum.KeyCode.E)
 	end    
 })
+
 SettingsTab:AddButton({
 	Name = "Destroy",
 	Callback = function()
@@ -177,18 +196,13 @@ OrionLib:Destroy()
 
 
 
-
-
-
-
 task.wait(3)
 
 OrionLib:MakeNotification({
-	Name = "T4S",
-	Content = "Succes Fully loaded",
-	Image = "rbxassetid://4483345998",
+	Name = "",
+	Content = "Succes Fully loaded!",
+	Image = "",
 	Time = 7
 })
-
 
 OrionLib:Init()
