@@ -9,6 +9,10 @@ Duration = 15;
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "F4S - MusicPlay", HidePremium = false, Intro = true, IntroText = "Have Fun!", SaveConfig = true, ConfigFolder = "MPlayF4S"})
 
+-- Add meow = 3
+
+writefile("meow.png", game:HttpGet("https://github.com/0nee-a/Musicmodel/raw/refs/heads/main/meow.png"))
+
 -- Music Tab
 
 local MusicPlayTab = Window:MakeTab({
@@ -102,7 +106,7 @@ local Section = CustomTab:AddSection({
 
 CustomTab:AddTextbox({
 	Name = "Name",
-	Default = "1.mp3",
+	Default = ".mp3",
 	TextDisappear = false,
 	Callback = function(Value5)
               local ai = game.Workspace.SoundT4SC
@@ -199,9 +203,9 @@ OrionLib:Destroy()
 task.wait(3)
 
 OrionLib:MakeNotification({
-	Name = "",
+	Name = "Gui",
 	Content = "Succes Fully loaded!",
-	Image = "",
+	Image = getcustomasset("meow.png"),
 	Time = 7
 })
 
