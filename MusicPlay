@@ -9,7 +9,7 @@ Duration = 15;
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "F4S - MusicPlay", HidePremium = false, Intro = true, IntroText = "Have Fun!", SaveConfig = true, ConfigFolder = "MPlayF4S"})
 
--- Add meow = 3
+-- Add meow =3
 
 writefile("meow.png", game:HttpGet("https://github.com/0nee-a/Musicmodel/raw/refs/heads/main/meow.png"))
 
@@ -186,14 +186,33 @@ SettingsTab:AddBind({
 	Default = Enum.KeyCode.E,
 	Hold = false,
 	Callback = function()
-		Bind:Set(Enum.KeyCode.E)
+		print("¿43xß35m3m3?")
 	end    
 })
 
 SettingsTab:AddButton({
 	Name = "Destroy",
 	Callback = function()
-OrionLib:Destroy()
+           function Callback(answer)
+    if answer == "Yes" then
+        OrionLib:Destroy()
+    elseif answer == "No" then
+        print("=3")
+    end
+end
+
+local Bindable = Instance.new("BindableFunction")
+Bindable.OnInvoke = Callback
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Destroy Gui?";
+    Text = "";
+    Duration = 10;
+    Button1 = "Yes";
+    Button2 = "No";
+    Icon = getcustomasset("meow.png");
+    Callback = Bindable
+})
   	end    
 })
 
